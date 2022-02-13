@@ -1,0 +1,187 @@
+@import './theme.scss';
+@import './layout.scss';
+
+// Fonts
+/* Syne */
+/* Credit: https://gitlab.com/bonjour-monde/fonderie/syne-typeface */
+@font-face {
+  font-family: 'SyneRegular';
+  src: url('../fonts/syne/Syne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SyneBold';
+  src: url('../fonts/syne/Syne-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SyneExtraBold';
+  src: url('../fonts/syne/Syne-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SyneItalic';
+  src: url('../fonts/syne/Syne-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SyneMono';
+  src: url('../fonts/syne/SyneMono-Regular.ttf') format('truetype');
+}
+
+// Basic settings
+body {
+  @include fluid-type( $grow-start-width, $grow-stop-width, $min-font-size, $max-font-size );
+  @include font( 'normal' );
+
+  color: $cFont-dark;
+  background: $cBackground;
+
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0em;
+  margin: 0em;
+  color: inherit;
+}
+
+// Page styles
+header {
+  @include fluid-headings( 0.67 );
+  padding: 2rem;
+
+  h1 {
+    text-align: center;
+    @include font( 'heading' );
+  }
+}
+
+.tilde {
+  color: $cStrong;
+}
+
+main {
+  @include font( 'normal' );
+
+  .parts {
+    display: flex;
+    flex-direction: row;
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked + label {
+      background-color: $cFocus;
+
+      .content {
+        text-transform: lowercase;
+        display: block;
+        flex-direction: column;
+
+        text-align: left;
+        margin: 0em auto;
+        padding: 0.5em;
+
+        p {
+          @include font( 'normal' );
+          color: $cFont-bright; 
+        }
+
+        ul {
+          list-style: disc;
+          padding-left: 1em;
+
+          li {
+            padding: 0.1em 0.0em;
+            a {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    label {
+      .content {
+        display: none;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+
+      overflow: auto;
+
+      width: 100%;
+      height: 40vh;
+
+      @include font( 'heading' );
+      text-transform: uppercase;
+      text-align: center;
+
+      border: 1px solid $cBorder;
+      color: $cStrong;
+
+      cursor: pointer;
+
+      &:hover {
+        // background-color: $cPrimary;
+      }
+    }
+  } 
+
+  .words {
+    border: 1px solid $cBorder;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+
+  .archive {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5em;
+
+    h2 {
+      font-size: 1.2em;
+      padding-right: 1.5em;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .tilde_ring {
+    background-color: white;
+
+    border: 1px solid $cBorder;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0.5em;
+
+    &_link {
+      color: $cStrong;  
+      opacity: 0.7;
+    }
+  }
+
+
+
+  @include font( 'accent' );
+}

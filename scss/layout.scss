@@ -1,0 +1,135 @@
+@import './utils.scss';
+
+// Font size
+$grow-start-width: 320px;
+$grow-stop-width: 1000px;
+
+$min-font-size: 14px;
+$max-font-size: 26px;
+
+$min-heading-multiplier: 1.25; // mobile
+$max-heading-multiplier: 2.0; // desktop
+
+// credit: https://css-tricks.com/snippets/css/fluid-typography/
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+
+    & {
+
+      font-size: $min-font-size;
+
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+// Device widths
+$small-device-width:  400px; 
+$medium-device-width: 700px;
+$large-device-width:  1150px;
+$huge-device-width:   1400px;
+
+@mixin small {
+  @media ( min-width: $small-device-width )  {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media ( min-width: $medium-device-width )  {
+    @content;
+  }
+}
+
+@mixin large {
+  @media ( min-width: $large-device-width )  {
+    @content;
+  }
+}
+
+@mixin huge {
+  @media ( min-width: $huge-device-width )  {
+    @content;
+  }
+}
+
+@mixin custom( $device-width ) {
+  @media ( min-width: $device-width ) {
+    @content;
+  }
+}
+
+// Headings
+
+@mixin fluid-headings($size) {
+  h1 {
+    font-size: pow( $min-heading-multiplier, 3 ) * $size;
+
+    @include fluid-type( 
+      $grow-start-width, 
+      $grow-stop-width, 
+      pow( $min-heading-multiplier, 3 ) * $min-font-size * $size,
+      pow( $max-heading-multiplier, 3 ) * $min-font-size * $size
+    );
+
+    letter-spacing: 0.2rem;
+  }
+
+  h2 {
+    font-size: pow( $min-heading-multiplier, 2.0 ) * $size;
+
+    @include fluid-type( 
+      $grow-start-width, 
+      $grow-stop-width, 
+      pow( $min-heading-multiplier, 2.0 ) * $min-font-size * $size,
+      pow( $max-heading-multiplier, 2.0 ) * $max-font-size * $size
+    );
+
+    letter-spacing: 0.1rem;
+  }
+
+  h3 {
+    font-size: pow( $min-heading-multiplier, 2 ) * $size;
+
+    @include fluid-type( 
+      $grow-start-width, 
+      $grow-stop-width, 
+      pow( $min-heading-multiplier, 2 ) * $min-font-size * $size,
+      pow( $max-heading-multiplier, 2 ) * $min-font-size * $size
+    );
+
+    letter-spacing: 0.0rem;
+  }
+
+  h4 {
+    font-size: pow( $min-heading-multiplier, 1 ) * $size;
+
+    @include fluid-type( 
+      $grow-start-width, 
+      $grow-stop-width, 
+      pow( $min-heading-multiplier, 1 ) * $min-font-size * $size,
+      pow( $max-heading-multiplier, 1 ) * $min-font-size * $size
+    );
+
+    letter-spacing: 0.0rem;
+  }
+
+  h5 {
+    font-size: $min-heading-multiplier * $size;
+    letter-spacing: 0.0rem;
+  }
+}

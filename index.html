@@ -1,0 +1,142 @@
+<!doctype html> <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!--
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    -->    
+    <link rel="preload" href="./assets/fonts/syne/Syne-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./assets/fonts/syne/Syne-Bold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./assets/fonts/syne/Syne-ExtraBold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./assets/fonts/syne/SyneMono-Regular.ttf" as="font" type="font/ttf" crossorigin />
+
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <meta name="description" content="Public palmdrop home">
+    <meta name="keywords" content="digital entities">
+    <meta name="theme-color" content="#000000" />
+
+    <title>palmdrop ~ a node</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>palmdrop <span class="tilde">~</span> a node</span></h1>
+    </header>
+
+    <main>
+      <section class="parts">
+        <input
+          class="part-input"
+          name="part"
+          type="checkbox"
+          id="nodes"
+          value="nodes"
+        />
+        <label
+          for="nodes"
+        >
+          Nodes
+
+          <div class="content">
+            <p>
+              my other nodes in the web
+            </p>
+            <ul>
+              <li>
+                <a>
+                  entry
+                </a>
+              </li>
+              <li>
+                <a>
+                  other
+                </a>
+              </li>
+              <li>
+                <a>
+                  third
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </label>
+
+        <input
+          class="part-input"
+          name="part"
+          type="checkbox"
+          id="hyperlinks"
+          value="hyperlinks"
+        />
+        <label
+          for="hyperlinks"
+        >
+          Hyperlinks
+
+          <div class="content">
+            <p>
+              curated links to other webspaces keeps the web connected and interesting
+            </p>
+          </div>
+        </label>
+
+        <input
+          class="part-input"
+          name="part"
+          type="checkbox"
+          id="town"
+          value="town"
+        />
+        <label
+          for="town"
+        >
+          The Town
+          <div class="content">
+            <p>
+              tilde.town is a shared digital space for digital creativity and community
+            </p>
+          </div>
+        </label>
+      </section>
+
+      <section class="words">
+    </main>
+
+    <footer>
+      <div class="archive">
+        <h2>
+          Archive
+        </h2>
+        <ul>
+          <li>
+            <a href="archive/feb2022/index.html">
+              Feb 2022
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <div id="tilde_ring" class="tilde_ring">
+        <p><em>a member of the updated tilde.town ring</em></p>
+        <p> <a id="tilde_town_ring" class="tilde_ring_link" href="">random user</a>
+          | <a id="random_tildebox" class="tilde_ring_link" href="">random box</a>
+          | <a id="tilde_town_ring_next" class="tilde_ring_link" href="">next user</a> </p>
+        <p><a href="https://tilde.town/~eeeeeta/ring/join.html">join</a></p>
+        <script type="text/javascript">
+          var ringjs = document.createElement('script');
+          ringjs.src = document.location.protocol + '//tilde.town/~login/tilde_ring.js';
+          document.getElementById('tilde_ring').appendChild(ringjs);
+        </script>
+      </div>
+
+    </footer>
+  </body>
+</html>

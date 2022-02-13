@@ -1,0 +1,64 @@
+$cBorder: #550000;
+$cPrimary: #1D4E40;
+
+$cBackground: black;
+$cFocus: blue;
+$cStrong: red;
+
+$cFont-dark: #1D4E40;
+$cFont-bright: white;
+$cFont-subtle: gray;
+$cFont-bleak: gainsboro;
+
+/* Font data */ 
+$fonts: (
+  'heading': (
+    'name': 'SyneExtraBold',
+    'fallback': sans-serif,
+    'weight': 300,
+    'style': normal,
+  ),
+  'subheading': (
+    'name': 'SyneBold',
+    'fallback': sans-serif,
+    'weight': 400,
+    'style': normal,
+  ),
+
+  'normal': (
+    'name': 'SyneRegular',
+    'fallback': sans-serif,
+    'weight': 300,
+    'style': normal
+  ),
+
+  'accent': (
+    'name': 'SyneBold',
+    'fallback': sans-serif,
+    'weight': 600,
+    'style': normal,
+  )
+);
+
+/*
+  This mixin enables easy font usage.
+  By passing the font name, the font-family,
+  fallback font and font-weight will automatically be set.
+
+  The default weight can be overridden by passing a weight value. 
+*/
+@mixin font( $type, $weight : 0 ) {
+  $fontData: map-get( $fonts, $type );
+
+  $name:     map-get( $fontData, 'name' );
+  $fallback: map-get( $fontData, 'fallback' );
+  $style:    map-get( $fontData, 'style' );
+
+  @if $weight == 0 {
+    $weight: map-get( $fontData, 'weight' );
+  }
+
+  font-family: $name, $fallback;
+  font-weight: $weight;
+  font-style: $style;
+}
