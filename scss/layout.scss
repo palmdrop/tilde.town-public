@@ -5,10 +5,10 @@ $grow-start-width: 320px;
 $grow-stop-width: 1000px;
 
 $min-font-size: 14px;
-$max-font-size: 26px;
+$max-font-size: 20px;
 
 $min-heading-multiplier: 1.25; // mobile
-$max-heading-multiplier: 2.0; // desktop
+$max-heading-multiplier: 1.8; // desktop
 
 // credit: https://css-tricks.com/snippets/css/fluid-typography/
 @function strip-unit($value) {

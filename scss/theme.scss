@@ -1,14 +1,19 @@
 $cBorder: #550000;
 $cPrimary: #1D4E40;
+$cBright: white;
+$cGlow: #ffffff55;
 
 $cBackground: black;
-$cFocus: blue;
+$cFocus: $cPrimary;
 $cStrong: red;
 
 $cFont-dark: #1D4E40;
-$cFont-bright: white;
+$cFont-bright: #ffffffaa;
 $cFont-subtle: gray;
 $cFont-bleak: gainsboro;
+
+// Bleak, green colors with subtle glow around certain components
+// One primary, strong color
 
 /* Font data */ 
 $fonts: (
@@ -33,9 +38,9 @@ $fonts: (
   ),
 
   'accent': (
-    'name': 'SyneBold',
+    'name': 'PressStart2P',
     'fallback': sans-serif,
-    'weight': 600,
+    'weight': 300,
     'style': normal,
   )
 );

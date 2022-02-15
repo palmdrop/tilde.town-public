@@ -29,6 +29,11 @@
   src: url('../fonts/syne/SyneMono-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('../fonts/pressStart2P/PressStart2P.ttf') format('truetype');
+}
+
 // Basic settings
 body {
   @include fluid-type( $grow-start-width, $grow-stop-width, $min-font-size, $max-font-size );
@@ -46,19 +51,38 @@ body {
   color: inherit;
 }
 
+.tilde {
+  @include font( 'accent' );
+  color: $cStrong;
+  font-size: 0.7em;
+  top: 0.25em;
+}
+
 // Page styles
 header {
   @include fluid-headings( 0.67 );
   padding: 2rem;
 
+  border: 1px solid $cBorder;
+
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+
   h1 {
     text-align: center;
     @include font( 'heading' );
-  }
-}
 
-.tilde {
-  color: $cStrong;
+    .tilde {
+      position: relative;
+    }
+  }
+
+  p {
+    padding-top: 1em;
+    color: $cFont-bright;
+    text-align: center;
+  }
 }
 
 main {
@@ -66,7 +90,11 @@ main {
 
   .parts {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+
+    @include large {
+      flex-direction: row;
+    }
 
     input[type="checkbox"] {
       display: none;
@@ -83,6 +111,8 @@ main {
         text-align: left;
         margin: 0em auto;
         padding: 0.5em;
+
+        max-width: 600px;
 
         p {
           @include font( 'normal' );
@@ -108,15 +138,20 @@ main {
         display: none;
       }
 
+      padding: 0em 1em;
+      height: 25vh;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-content: center;
+      align-items: center;
 
       overflow: auto;
 
-      width: 100%;
-      height: 40vh;
+      @include large {
+        width: 100%;
+        height: 40vh;
+      }
 
       @include font( 'heading' );
       text-transform: uppercase;
@@ -126,33 +161,65 @@ main {
       color: $cStrong;
 
       cursor: pointer;
-
-      &:hover {
-        // background-color: $cPrimary;
-      }
     }
   } 
 
   .words {
+    padding: 2em 1em;
+
+    display: flex;
+    justify-content: center;
+
     border: 1px solid $cBorder;
+
+    .message {
+      max-width: 700px;
+      border: 1px solid $cBright;
+      padding: 1.5em;
+      padding-top: 0.5em;
+
+      color: $cFont-bright;
+
+      .date {
+        position: relative;
+        top: -1%;
+
+        color: $cPrimary;
+        text-transform: uppercase;
+
+        @include font('subheading');
+
+        text-align: right;
+      }
+    }
   }
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
+  border: 1px solid $cBorder;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  hr {
+    width: 50%;
+    opacity: 0.5;
+
+  }
+
+  .tilde {
+    font-size: 0.6em;
+  }
 
   .archive {
-    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0.5em;
+    padding: 0.4em;
 
     h2 {
-      font-size: 1.2em;
+      font-size: 1.0em;
       padding-right: 1.5em;
     }
 
@@ -166,9 +233,8 @@ footer {
   }
 
   .tilde_ring {
-    background-color: white;
+    // background-color: white;
 
-    border: 1px solid $cBorder;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -183,5 +249,5 @@ footer {
 
 
 
-  @include font( 'accent' );
+  @include font( 'subheading' );
 }
