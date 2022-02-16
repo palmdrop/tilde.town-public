@@ -1,0 +1,419 @@
+/* Font data */
+/*
+  This mixin enables easy font usage.
+  By passing the font name, the font-family,
+  fallback font and font-weight will automatically be set.
+
+  The default weight can be overridden by passing a weight value. 
+*/
+/* Syne */
+/* Credit: https://gitlab.com/bonjour-monde/fonderie/syne-typeface */
+@font-face {
+  font-family: 'SyneRegular';
+  src: url("../fonts/syne/Syne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SyneBold';
+  src: url("../fonts/syne/Syne-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SyneExtraBold';
+  src: url("../fonts/syne/Syne-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SyneItalic';
+  src: url("../fonts/syne/Syne-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SyneMono';
+  src: url("../fonts/syne/SyneMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'PressStart2P';
+  src: url("../fonts/pressStart2P/PressStart2P.ttf") format("truetype");
+}
+
+body {
+  font-family: "SyneRegular", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #1D4E40;
+  background: black;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 320px) {
+  body {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+* {
+  padding: 0em;
+  margin: 0em;
+  color: inherit;
+}
+
+.tilde {
+  font-family: "PressStart2P", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: red;
+  font-size: 0.7em;
+  top: 0.25em;
+}
+
+header {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header h1 {
+  font-size: 1.30859;
+  letter-spacing: 0.2rem;
+}
+
+header h1 {
+  font-size: 18.32031px;
+}
+
+@media screen and (min-width: 320px) {
+  header h1 {
+    font-size: calc(18.32031px + 36.38385 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header h1 {
+    font-size: 54.70416px;
+  }
+}
+
+header h2 {
+  font-size: 1.04688;
+  letter-spacing: 0.1rem;
+}
+
+header h2 {
+  font-size: 14.65625px;
+}
+
+@media screen and (min-width: 320px) {
+  header h2 {
+    font-size: calc(14.65625px + 28.75975 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header h2 {
+    font-size: 43.416px;
+  }
+}
+
+header h3 {
+  font-size: 1.04688;
+  letter-spacing: 0.0rem;
+}
+
+header h3 {
+  font-size: 14.65625px;
+}
+
+@media screen and (min-width: 320px) {
+  header h3 {
+    font-size: calc(14.65625px + 15.73495 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header h3 {
+    font-size: 30.3912px;
+  }
+}
+
+header h4 {
+  font-size: 0.8375;
+  letter-spacing: 0.0rem;
+}
+
+header h4 {
+  font-size: 11.725px;
+}
+
+@media screen and (min-width: 320px) {
+  header h4 {
+    font-size: calc(11.725px + 5.159 * ((100vw - 320px) / 680));
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header h4 {
+    font-size: 16.884px;
+  }
+}
+
+header h5 {
+  font-size: 0.8375;
+  letter-spacing: 0.0rem;
+}
+
+header h1 {
+  text-align: center;
+  font-family: "SyneExtraBold", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+header h1 .tilde {
+  position: relative;
+}
+
+header p {
+  padding-top: 1em;
+  color: #cfcfcf;
+  text-align: center;
+}
+
+main {
+  font-family: "SyneRegular", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+main .parts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 1150px) {
+  main .parts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+main .parts h2 {
+  font-size: 1.3em;
+}
+
+main .parts input[type="checkbox"] {
+  display: none;
+}
+
+main .parts input[type="checkbox"]:checked + label {
+  background-color: #1D4E40;
+}
+
+main .parts input[type="checkbox"]:checked + label .content {
+  text-transform: lowercase;
+  display: block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  margin: 0em auto;
+  padding: 0.6em;
+  width: 70%;
+  max-width: 500px;
+}
+
+main .parts input[type="checkbox"]:checked + label .content p {
+  font-family: "SyneRegular", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #cfcfcf;
+}
+
+main .parts input[type="checkbox"]:checked + label .content ul {
+  list-style: disc;
+  padding-left: 1em;
+  padding-top: 0.15em;
+}
+
+main .parts input[type="checkbox"]:checked + label .content ul li {
+  padding: 0.1em 0.0em;
+}
+
+main .parts input[type="checkbox"]:checked + label .content ul li a {
+  text-decoration: underline;
+}
+
+main .parts label {
+  padding: 1em 1em;
+  min-height: 22vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+  font-family: "SyneExtraBold", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid #550000;
+  color: red;
+  cursor: pointer;
+}
+
+main .parts label .content {
+  display: none;
+}
+
+@media (min-width: 1150px) {
+  main .parts label {
+    width: 100%;
+    height: 40vh;
+  }
+}
+
+main .words {
+  padding: 2em 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*
+    border: 1px solid $cBorder;
+    border-left: 1px solid $cBorder;
+    border-right: 1px solid $cBorder;
+    */
+}
+
+main .words .message {
+  max-width: 700px;
+  border: 1px solid #cfcfcf;
+  padding: 1.5em;
+  padding-top: 0.5em;
+  color: #cfcfcf;
+}
+
+main .words .message .date {
+  position: relative;
+  top: -1%;
+  color: #1D4E40;
+  text-transform: uppercase;
+  font-family: "SyneBold", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: right;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "SyneBold", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+footer hr {
+  width: 50%;
+  opacity: 0.5;
+}
+
+footer .tilde {
+  font-size: 0.6em;
+}
+
+footer .archive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.4em;
+}
+
+footer .archive h2 {
+  font-size: 1.0em;
+  padding-right: 1.5em;
+}
+
+footer .archive ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer .archive ul a {
+  font-size: 1.3rem;
+}
+
+footer .tilde_ring {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+}
+
+footer .tilde_ring_link {
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */

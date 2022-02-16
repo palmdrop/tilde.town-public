@@ -60,10 +60,10 @@ body {
 
 // Page styles
 header {
-  @include fluid-headings( 0.67 );
+  @include fluid-headings( 0.73 );
   padding: 2rem;
 
-  border: 1px solid $cBorder;
+  // border: 1px solid $cBorder;
 
   display: flex; 
   flex-direction: column;
@@ -92,8 +92,13 @@ main {
     display: flex;
     flex-direction: column;
 
+
     @include large {
       flex-direction: row;
+    }
+
+    h2 {
+      font-size: 1.3em;
     }
 
     input[type="checkbox"] {
@@ -110,9 +115,10 @@ main {
 
         text-align: left;
         margin: 0em auto;
-        padding: 0.5em;
+        padding: 0.6em;
 
-        max-width: 600px;
+        width: 70%;
+        max-width: 500px;
 
         p {
           @include font( 'normal' );
@@ -122,6 +128,7 @@ main {
         ul {
           list-style: disc;
           padding-left: 1em;
+          padding-top: 0.15em;
 
           li {
             padding: 0.1em 0.0em;
@@ -138,8 +145,8 @@ main {
         display: none;
       }
 
-      padding: 0em 1em;
-      height: 25vh;
+      padding: 1em 1em;
+      min-height: 22vh;
 
       display: flex;
       flex-direction: column;
@@ -147,6 +154,7 @@ main {
       align-items: center;
 
       overflow: auto;
+      border-radius: 8em;
 
       @include large {
         width: 100%;
@@ -170,19 +178,26 @@ main {
     display: flex;
     justify-content: center;
 
+    /*
     border: 1px solid $cBorder;
+    border-left: 1px solid $cBorder;
+    border-right: 1px solid $cBorder;
+    */
 
     .message {
       max-width: 700px;
       border: 1px solid $cBright;
-      padding: 1.5em;
+      padding: 2.0em;
       padding-top: 0.5em;
+
+      border-radius: 3em;
 
       color: $cFont-bright;
 
       .date {
         position: relative;
         top: -1%;
+        padding-right: 1em;
 
         color: $cPrimary;
         text-transform: uppercase;
@@ -196,7 +211,7 @@ main {
 }
 
 footer {
-  border: 1px solid $cBorder;
+  // border: 1px solid $cBorder;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,7 +242,7 @@ footer {
       display: flex;
       flex-direction: row;
       a {
-        font-size: 1.3rem;
+        font-size: 1.1em;
       }
     }
   }
@@ -243,7 +258,6 @@ footer {
 
     &_link {
       color: $cStrong;  
-      opacity: 0.7;
     }
   }
 
