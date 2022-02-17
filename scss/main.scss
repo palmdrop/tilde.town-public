@@ -60,7 +60,7 @@ body {
 
 // Page styles
 header {
-  @include fluid-headings( 0.73 );
+  @include fluid-headings( 1.0 );
   padding: 2rem;
 
   // border: 1px solid $cBorder;
@@ -98,7 +98,7 @@ main {
     }
 
     h2 {
-      font-size: 1.3em;
+      font-size: 1.2em;
     }
 
     input[type="checkbox"] {

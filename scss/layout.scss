@@ -2,13 +2,13 @@
 
 // Font size
 $grow-start-width: 320px;
-$grow-stop-width: 1000px;
+$grow-stop-width: 1920px;
 
 $min-font-size: 14px;
 $max-font-size: 20px;
 
-$min-heading-multiplier: 1.25; // mobile
-$max-heading-multiplier: 1.8; // desktop
+$min-heading-multiplier: 1.1; // mobile
+$max-heading-multiplier: 2.0; // desktop
 
 // credit: https://css-tricks.com/snippets/css/fluid-typography/
 @function strip-unit($value) {
