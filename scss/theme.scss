@@ -1,14 +1,16 @@
-$cBorder: #550000;
-$cPrimary: #1D4E40;
-$cBright: #cfcfcf;
+$cBorder: #9c3838;
+$cPrimary: #6a772d;
+$cBright: white;
 $cGlow: #ffffff55;
 
-$cBackground: black;
+$cBackground: rgb(9, 24, 10);
 $cFocus: $cPrimary;
-$cStrong: red;
+$cStrong: rgb(0, 255, 179);
 
-$cFont-dark: #1D4E40;
-$cFont-bright: #cfcfcf;
+$cGradient: linear-gradient(180deg, #8fa74333 0%, rgba(17, 119, 114, 0.27) 100%);
+
+$cFont-dark: $cPrimary;
+$cFont-bright: #ffffffd8;
 $cFont-subtle: gray;
 $cFont-bleak: gainsboro;
 
@@ -40,7 +42,7 @@ $fonts: (
   'accent': (
     'name': 'PressStart2P',
     'fallback': sans-serif,
-    'weight': 300,
+    'weight': 600,
     'style': normal,
   )
 );

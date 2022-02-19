@@ -56,14 +56,14 @@ body {
   color: $cStrong;
   font-size: 0.7em;
   top: 0.25em;
+
+  // text-shadow: 0px 0px 0.5em #ffffff35;
 }
 
 // Page styles
 header {
   @include fluid-headings( 1.0 );
   padding: 2rem;
-
-  // border: 1px solid $cBorder;
 
   display: flex; 
   flex-direction: column;
@@ -92,9 +92,9 @@ main {
     display: flex;
     flex-direction: column;
 
-
     @include large {
       flex-direction: row;
+      margin-left: 2px;
     }
 
     h2 {
@@ -106,7 +106,7 @@ main {
     }
 
     input[type="checkbox"]:checked + label {
-      background-color: $cFocus;
+      background: $cGradient;
 
       .content {
         text-transform: lowercase;
@@ -156,16 +156,23 @@ main {
       overflow: auto;
       border-radius: 8em;
 
+      margin-top: -2.0px;
+
+      // box-shadow: 0px 0px 2.5em #ffffff07;
+
       @include large {
         width: 100%;
-        height: 40vh;
+        height: 38vh;
+        max-height: 550px;
+        margin-top: 0.0px;
+        margin-left: -2.0px;
       }
 
       @include font( 'heading' );
       text-transform: uppercase;
       text-align: center;
 
-      border: 1px solid $cBorder;
+      border: 2px solid $cBorder;
       color: $cStrong;
 
       cursor: pointer;
@@ -174,29 +181,25 @@ main {
 
   .words {
     padding: 2em 1em;
+    padding-bottom: 1em;
 
     display: flex;
     justify-content: center;
 
-    /*
-    border: 1px solid $cBorder;
-    border-left: 1px solid $cBorder;
-    border-right: 1px solid $cBorder;
-    */
-
     .message {
+      position: relative;
       max-width: 700px;
-      border: 1px solid $cBright;
-      padding: 2.0em;
-      padding-top: 0.5em;
+      border: 2px solid $cBright;
+      padding: 1.8em;
 
-      border-radius: 3em;
+      border-radius: 2em;
 
       color: $cFont-bright;
 
       .date {
-        position: relative;
-        top: -1%;
+        position: absolute;
+        top: 7%;
+        right: 3%;
         padding-right: 1em;
 
         color: $cPrimary;
@@ -211,7 +214,6 @@ main {
 }
 
 footer {
-  // border: 1px solid $cBorder;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -219,7 +221,6 @@ footer {
   hr {
     width: 50%;
     opacity: 0.5;
-
   }
 
   .tilde {
@@ -248,8 +249,6 @@ footer {
   }
 
   .tilde_ring {
-    // background-color: white;
-
     display: flex;
     flex-direction: column;
     align-items: center;
